@@ -14,16 +14,23 @@ public class HomeController : Controller
 	}
 
 	[HttpGet]
-	public ViewResult Imc() 
+	public ViewResult Imc(int? dinero = 200) 
 	{
 		return View("Imc_Get");
 	}
 
 	[HttpPost]
-	public ViewResult Imc(string edad, string peso, string estatura) 
+	public ActionResult Imc(float peso, float estatura) 
 	{
+		try 
+		{
+			ViewBag.imc = peso / MathF.Pow(estatura,2);
+		}catch(Exception ex) { return View("Imc_Get"); }
 
+		if(ViewBag.imc != double.NaN) { return View("Imc_Get"); }
+		
 		return View("Imc_Post");
+
 	}
 
 
