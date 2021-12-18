@@ -14,8 +14,6 @@ public class HomeController : Controller
 	}
 
 	[HttpGet]
-	[Route("fachero")]
-	[Route("fachero/{a_texto_prueba}")]
 	public string peliculas(string? a_texto_prueba)
 	{
 		return "holamundo" + a_texto_prueba;

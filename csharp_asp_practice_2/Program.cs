@@ -23,7 +23,7 @@ app.UseAuthorization();
 //Routes
 app.MapControllerRoute(
   name: "SeeCurrentMovies",
-  pattern: "Movies",
+  pattern: "Movies/{a_texto_prueba?}",
   defaults: new { controller="Home", action="peliculas"}
   );
 
