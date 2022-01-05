@@ -27,7 +27,6 @@ public class HomeController : Controller
 			ViewBag.imc = peso / MathF.Pow(estatura,2);
 		}catch(Exception ex) { return View("Imc_Get"); }
 
-		if(ViewBag.imc != double.NaN) { return View("Imc_Get"); }
 		
 		return View("Imc_Post");
 
